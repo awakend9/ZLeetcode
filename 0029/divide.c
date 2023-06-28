@@ -1,6 +1,6 @@
 int divide(int dividend, int divisor)
 {
-    int result = 0;
+    long result = 0;
     if (dividend == 0) return result;
     else if((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0))
     {
@@ -39,5 +39,7 @@ int divide(int dividend, int divisor)
         }
     }
 
+    if(result < -2147483648) result = -2147483648;
+    else if(result > 2147483647) result = 2147483647;
     return result;
 }
